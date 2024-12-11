@@ -1,0 +1,5 @@
+[tool.pylint]
+disable = ["W0718", "C0301"]
+
+[tool.mypy]
+disable_error_code = ["import-untyped"]
