@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+selenium = "*"
+pydub = "*"
+speechrecognition = "*"
+ffmpy = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+requests = "*"
+types-requests = "*"
+
+[dev-packages]
+pre-commit = "*"
+mypy = "*"
+ruff = "*"
+types-requests = "*"
+
+[requires]
+python_version = "3.12"
