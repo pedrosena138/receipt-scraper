@@ -167,3 +167,6 @@ cython_debug/
 
 #FFMPEG
 ffmpeg.exe
+
+# XML
+*.xml
