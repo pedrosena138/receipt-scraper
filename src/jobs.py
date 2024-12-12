@@ -1,8 +1,8 @@
+import os
 import random
 import time
+import urllib.request
 
-import requests
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -80,11 +80,9 @@ def get_receipt_url(key: str) -> str:
     return url
 
 
-def get_receipt_xml(url: str) -> BeautifulSoup:
-    response = requests.get(url, timeout=None)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, "xml")
-    return soup
+def get_receipt_xml(url: str, key: str):
+    filepath = os.path.join(os.getcwd(), "xml", f"{key}.xml")
+    urllib.request.urlretrieve(url, filepath)
 
 
 __all__ = ["get_receipt_url", "get_receipt_xml"]
