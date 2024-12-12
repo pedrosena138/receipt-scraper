@@ -5,7 +5,10 @@ from src.jobs import get_receipt_url, get_receipt_xml
 
 def main():
     try:
-        key = "26241293209765069400655160000032171048579174"
+        assert len(sys.argv) > 1, "Argument missing 'key'"
+        assert len(sys.argv) < 2, "Too many arguments"
+
+        key = sys.argv[1]
         url = get_receipt_url(key)
         get_receipt_xml(url, key)
     except Exception as e:
